@@ -37,16 +37,7 @@ const TypewriterText = ({ text }: { text: string }) => {
     return () => clearTimeout(timeout);
   }, [currentIndex, isDeleting, text]);
 
-  return (
-    <span className="inline-block">
-      {displayedText}
-      <motion.span
-        className="inline-block w-0.5 h-6 bg-white ml-1"
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-      />
-    </span>
-  );
+  return <span className="inline-block">{displayedText}</span>;
 };
 
 const Index = () => {
