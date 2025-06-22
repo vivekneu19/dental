@@ -43,8 +43,8 @@ const Index = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.img
-                src="https://images.pexels.com/photos/7788497/pexels-photo-7788497.jpeg"
-                alt="Professional dental implant restoration showing perfect smile"
+                src="https://images.pexels.com/photos/3946834/pexels-photo-3946834.jpeg"
+                alt="Professional dental clinic treatment showing modern dental care"
                 className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
