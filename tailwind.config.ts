@@ -28,6 +28,17 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        dental: {
+          blue: "#1e40af",
+          "blue-light": "#3b82f6",
+          "blue-dark": "#1e3a8a",
+          teal: "#0891b2",
+          "teal-light": "#06b6d4",
+          "teal-dark": "#0e7490",
+          gray: "#6b7280",
+          "gray-light": "#9ca3af",
+          "gray-dark": "#374151",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
