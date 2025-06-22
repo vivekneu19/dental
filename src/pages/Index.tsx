@@ -125,10 +125,10 @@ const Index = () => {
 
               {/* Overlay Badge */}
               <motion.div
-                className="absolute top-4 left-4"
-                initial={{ y: -20, opacity: 0 }}
+                className="absolute bottom-4 right-4"
+                initial={{ y: 20, opacity: 0 }}
                 animate={
-                  heroInView ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }
+                  heroInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
                 }
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
@@ -138,12 +138,14 @@ const Index = () => {
                 >
                   <Badge
                     variant="secondary"
-                    className="bg-white/95 backdrop-blur-sm text-dental-blue border border-white/20 shadow-lg px-3 py-1.5 text-xs font-semibold hover:bg-white transition-all duration-300"
+                    className="bg-dental-blue/90 backdrop-blur-sm text-white border border-dental-blue shadow-xl px-3 py-2 text-xs font-semibold hover:bg-dental-blue transition-all duration-300 rounded-lg"
                   >
-                    Patented Flat-Fee System.
-                    <span className="block">
-                      Exclusive to DentalImplantsAtHouston.com
-                    </span>
+                    <div className="text-center leading-tight">
+                      <div className="font-bold">Patented Flat-Fee System</div>
+                      <div className="text-xs opacity-90 mt-0.5">
+                        Exclusive to DentalImplantsAtHouston.com
+                      </div>
+                    </div>
                   </Badge>
                 </motion.div>
               </motion.div>
@@ -377,10 +379,10 @@ const Index = () => {
 
               {/* Overlay Badge */}
               <motion.div
-                className="absolute top-6 left-6"
-                initial={{ y: -20, opacity: 0 }}
+                className="absolute bottom-6 right-6"
+                initial={{ y: 20, opacity: 0 }}
                 animate={
-                  heroInView ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }
+                  heroInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
                 }
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
@@ -390,14 +392,14 @@ const Index = () => {
                 >
                   <Badge
                     variant="secondary"
-                    className="bg-white/95 backdrop-blur-sm text-dental-blue border border-white/20 shadow-lg px-4 py-2 text-sm font-semibold hover:bg-white transition-all duration-300"
+                    className="bg-dental-blue/90 backdrop-blur-sm text-white border border-dental-blue shadow-xl px-4 py-3 text-sm font-semibold hover:bg-dental-blue transition-all duration-300 rounded-lg"
                   >
-                    Patented Flat-Fee System.
-                    <br className="hidden sm:block" />
-                    <span className="block sm:inline">
-                      {" "}
-                      Exclusive to DentalImplantsAtHouston.com
-                    </span>
+                    <div className="text-center leading-tight">
+                      <div className="font-bold">Patented Flat-Fee System</div>
+                      <div className="text-xs opacity-90 mt-1">
+                        Exclusive to DentalImplantsAtHouston.com
+                      </div>
+                    </div>
                   </Badge>
                 </motion.div>
               </motion.div>
