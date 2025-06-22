@@ -150,7 +150,7 @@ const Index = () => {
       <motion.section
         ref={heroRef}
         style={{ y, opacity }}
-        className="container mx-auto px-4 py-8 md:py-16 lg:py-20"
+        className="container mx-auto px-4 py-8 md:py-16 lg:py-20 relative z-10"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Image */}
@@ -469,7 +469,7 @@ const Index = () => {
 
       {/* Secondary Section - Value Proposition */}
       <motion.section
-        className="bg-gray-50 py-16 relative overflow-hidden"
+        className="bg-gray-50 py-16 relative overflow-hidden z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
