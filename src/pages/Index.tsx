@@ -43,8 +43,8 @@ const Index = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.img
-                src="https://images.pexels.com/photos/6627589/pexels-photo-6627589.jpeg"
-                alt="Detailed dental implant restoration showing professional implant work"
+                src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
+                alt="Professional dental implant restoration showing perfect smile"
                 className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
@@ -197,17 +197,7 @@ const Index = () => {
                     whileHover={{ scale: 1.02, x: 5 }}
                   >
                     <div className="flex items-center space-x-3">
-                      <motion.span
-                        className="text-2xl"
-                        animate={{ rotate: [0, 10, -10, 0] }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          delay: index * 0.3,
-                        }}
-                      >
-                        {item.emoji}
-                      </motion.span>
+                      <span className="text-2xl">{item.emoji}</span>
                       <span className="font-medium text-gray-700 group-hover:text-gray-900 transition-colors">
                         {item.text}
                       </span>
