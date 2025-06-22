@@ -19,7 +19,11 @@ const Index = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="min-h-screen bg-white overflow-hidden"
+      className="min-h-screen overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #054773 0%, #0a5a85 25%, #0f6b96 50%, #0a5a85 75%, #054773 100%)",
+      }}
     >
       {/* Hero Section */}
       <motion.section
