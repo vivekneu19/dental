@@ -41,7 +41,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <motion.h1
-              className="text-3xl md:text-4xl font-black text-gray-900 leading-tight"
+              className="text-3xl md:text-4xl font-black text-white leading-tight"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -122,7 +122,7 @@ const Index = () => {
           >
             {/* Subheading */}
             <motion.p
-              className="text-lg text-dental-gray leading-relaxed font-light text-center"
+              className="text-lg text-gray-200 leading-relaxed font-light text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
@@ -143,7 +143,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 1.4 }}
             >
               <motion.h3
-                className="text-lg font-semibold text-gray-800 mb-6 text-center"
+                className="text-lg font-semibold text-white mb-6 text-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.6 }}
@@ -170,12 +170,12 @@ const Index = () => {
                   >
                     <div className="flex items-center space-x-3">
                       <span className="text-2xl">{item.emoji}</span>
-                      <span className="font-medium text-gray-700 group-hover:text-gray-900 transition-colors">
+                      <span className="font-medium text-gray-100 group-hover:text-white transition-colors">
                         {item.text}
                       </span>
                     </div>
                     <motion.span
-                      className="text-gray-400 line-through text-sm"
+                      className="text-gray-300 line-through text-sm"
                       initial={{ opacity: 1 }}
                       animate={{ opacity: [1, 0.5, 1] }}
                       transition={{
@@ -259,7 +259,7 @@ const Index = () => {
               </motion.div>
 
               <motion.p
-                className="text-sm text-dental-gray mt-3"
+                className="text-sm text-gray-200 mt-3"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2.4 }}
@@ -277,7 +277,7 @@ const Index = () => {
               }
               transition={{ duration: 0.6, delay: 2.6 }}
             >
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-dental-gray">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-200">
                 {[
                   "Licensed Specialists",
                   "FDA Approved Materials",
@@ -303,7 +303,7 @@ const Index = () => {
                         delay: index * 0.3,
                       }}
                     />
-                    <span className="hover:text-gray-900 transition-colors">
+                    <span className="hover:text-white transition-colors">
                       {text}
                     </span>
                   </motion.div>
@@ -411,7 +411,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <motion.h1
-                className="text-5xl font-black text-gray-900 leading-tight"
+                className="text-5xl font-black text-white leading-tight"
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -437,7 +437,7 @@ const Index = () => {
 
             {/* Subheading */}
             <motion.p
-              className="text-xl text-dental-gray leading-relaxed font-light"
+              className="text-xl text-gray-200 leading-relaxed font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
@@ -458,7 +458,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 1.0 }}
             >
               <motion.h3
-                className="text-lg font-semibold text-gray-800 mb-6"
+                className="text-lg font-semibold text-white mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
@@ -592,7 +592,7 @@ const Index = () => {
               }
               transition={{ duration: 0.6, delay: 2.2 }}
             >
-              <div className="flex flex-wrap items-center gap-6 text-sm text-dental-gray">
+              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-200">
                 {[
                   "Licensed Specialists",
                   "FDA Approved Materials",
@@ -631,7 +631,7 @@ const Index = () => {
 
       {/* Secondary Section - Value Proposition */}
       <motion.section
-        className="bg-gray-50 py-16 relative overflow-hidden z-10"
+        className="bg-gray-900/20 backdrop-blur-sm py-16 relative overflow-hidden z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -659,7 +659,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h2
-              className="text-2xl md:text-3xl font-bold text-gray-900 mb-6"
+              className="text-2xl md:text-3xl font-bold text-white mb-6"
               initial={{ scale: 0.9 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
@@ -668,7 +668,7 @@ const Index = () => {
               Why Choose ALLONUS™?
             </motion.h2>
             <motion.p
-              className="text-lg text-dental-gray mb-8"
+              className="text-lg text-gray-200 mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -744,7 +744,7 @@ const Index = () => {
                     </motion.span>
                   </motion.div>
                   <motion.h3
-                    className="font-semibold text-gray-900 mb-2 group-hover:text-dental-blue transition-colors duration-300"
+                    className="font-semibold text-white mb-2 group-hover:text-dental-blue-light transition-colors duration-300"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -753,7 +753,7 @@ const Index = () => {
                     {item.title}
                   </motion.h3>
                   <motion.p
-                    className="text-dental-gray text-sm group-hover:text-gray-700 transition-colors duration-300"
+                    className="text-gray-200 text-sm group-hover:text-gray-100 transition-colors duration-300"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
