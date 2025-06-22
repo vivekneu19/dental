@@ -1,7 +1,53 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+const TypewriterText = ({ text }: { text: string }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          // Typing
+          if (currentIndex < text.length) {
+            setDisplayedText(text.slice(0, currentIndex + 1));
+            setCurrentIndex(currentIndex + 1);
+          } else {
+            // Pause before deleting
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else {
+          // Deleting
+          if (currentIndex > 0) {
+            setDisplayedText(text.slice(0, currentIndex - 1));
+            setCurrentIndex(currentIndex - 1);
+          } else {
+            // Restart typing
+            setIsDeleting(false);
+          }
+        }
+      },
+      isDeleting ? 50 : 100,
+    ); // Faster deleting, slower typing
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, isDeleting, text]);
+
+  return (
+    <span className="inline-block">
+      {displayedText}
+      <motion.span
+        className="inline-block w-0.5 h-6 bg-white ml-1"
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+      />
+    </span>
+  );
+};
 
 const Index = () => {
   const containerRef = useRef(null);
@@ -54,13 +100,13 @@ const Index = () => {
                 Implant Pricing Is Broken.
               </motion.span>
               <motion.span
-                className="block text-dental-blue mt-2"
+                className="block text-white mt-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 whileHover={{ scale: 1.02 }}
               >
-                ALLONUS™ Fixed It.
+                <TypewriterText text="ALLONUS™ Fixed It." />
               </motion.span>
             </motion.h1>
           </motion.div>
@@ -424,13 +470,13 @@ const Index = () => {
                   Implant Pricing Is Broken.
                 </motion.span>
                 <motion.span
-                  className="block text-dental-blue mt-2"
+                  className="block text-white mt-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.0 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  ALLONUS™ Fixed It.
+                  <TypewriterText text="ALLONUS™ Fixed It." />
                 </motion.span>
               </motion.h1>
             </motion.div>
