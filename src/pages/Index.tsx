@@ -485,7 +485,7 @@ const Index = () => {
                   >
                     <div className="flex items-center space-x-3">
                       <span className="text-2xl">{item.emoji}</span>
-                      <span className="font-medium text-gray-700 group-hover:text-gray-900 transition-colors">
+                      <span className="font-medium text-gray-100 group-hover:text-white transition-colors">
                         {item.text}
                       </span>
                     </div>
@@ -574,7 +574,7 @@ const Index = () => {
               </motion.div>
 
               <motion.p
-                className="text-sm text-dental-gray mt-3"
+                className="text-sm text-gray-200 mt-3"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 2.0 }}
@@ -618,7 +618,7 @@ const Index = () => {
                         delay: index * 0.3,
                       }}
                     />
-                    <span className="hover:text-gray-900 transition-colors">
+                    <span className="hover:text-white transition-colors">
                       {text}
                     </span>
                   </motion.div>
