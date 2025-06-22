@@ -160,7 +160,7 @@ const Index = () => {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-all duration-300 group"
+                    className="flex items-center justify-between p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 hover:shadow-md transition-all duration-300 group"
                     initial={{ opacity: 0, x: -20 }}
                     animate={
                       heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
@@ -270,7 +270,7 @@ const Index = () => {
 
             {/* Trust Indicators */}
             <motion.div
-              className="pt-8 border-t border-gray-100"
+              className="pt-8 border-t border-white/20"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
@@ -475,7 +475,7 @@ const Index = () => {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-all duration-300 group"
+                    className="flex items-center justify-between p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 hover:shadow-md transition-all duration-300 group"
                     initial={{ opacity: 0, x: -20 }}
                     animate={
                       heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
@@ -585,7 +585,7 @@ const Index = () => {
 
             {/* Trust Indicators */}
             <motion.div
-              className="pt-8 border-t border-gray-100"
+              className="pt-8 border-t border-white/20"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
