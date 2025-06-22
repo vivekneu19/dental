@@ -27,10 +27,293 @@ const Index = () => {
         style={{ y, opacity }}
         className="container mx-auto px-4 py-8 md:py-16 lg:py-20 relative z-10"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        {/* Mobile/Tablet Layout */}
+        <div className="lg:hidden space-y-8">
+          {/* Heading First on Mobile */}
+          <motion.div
+            className="text-center"
+            initial={{ y: 30, opacity: 0 }}
+            animate={heroInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.h1
+              className="text-3xl md:text-4xl font-black text-gray-900 leading-tight"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                Implant Pricing Is Broken.
+              </motion.span>
+              <motion.span
+                className="block text-dental-blue mt-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                ALLONUS™ Fixed It.
+              </motion.span>
+            </motion.h1>
+          </motion.div>
+
+          {/* Image Second on Mobile */}
+          <motion.div
+            className="relative"
+            initial={{ y: 50, opacity: 0 }}
+            animate={heroInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          >
+            <motion.div
+              className="relative overflow-hidden rounded-2xl shadow-2xl group"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.img
+                src="https://images.pexels.com/photos/3946834/pexels-photo-3946834.jpeg"
+                alt="Professional dental clinic treatment showing modern dental care"
+                className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+              />
+
+              {/* Overlay Badge */}
+              <motion.div
+                className="absolute top-4 left-4"
+                initial={{ y: -20, opacity: 0 }}
+                animate={
+                  heroInView ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }
+                }
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Badge
+                    variant="secondary"
+                    className="bg-white/95 backdrop-blur-sm text-dental-blue border border-white/20 shadow-lg px-3 py-1.5 text-xs font-semibold hover:bg-white transition-all duration-300"
+                  >
+                    Patented Flat-Fee System.
+                    <span className="block">
+                      Exclusive to DentalImplantsAtHouston.com
+                    </span>
+                  </Badge>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* Rest of Content Third on Mobile */}
+          <motion.div
+            className="space-y-6"
+            initial={{ y: 30, opacity: 0 }}
+            animate={heroInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+          >
+            {/* Subheading */}
+            <motion.p
+              className="text-lg text-dental-gray leading-relaxed font-light text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              Restore your smile with a revolutionary flat-fee model where
+              implant count doesn't change your cost.
+            </motion.p>
+
+            {/* Visual Checklist */}
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={
+                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
+              transition={{ duration: 0.6, delay: 1.4 }}
+            >
+              <motion.h3
+                className="text-lg font-semibold text-gray-800 mb-6 text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1.6 }}
+              >
+                All Options. One Price.
+              </motion.h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Implant Options */}
+                {[
+                  { emoji: "4️⃣", text: "4 Implants", delay: 1.7 },
+                  { emoji: "6️⃣", text: "6 Implants", delay: 1.8 },
+                  { emoji: "8️⃣", text: "8 Implants", delay: 1.9 },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-md transition-all duration-300 group"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={
+                      heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                    }
+                    transition={{ duration: 0.5, delay: item.delay }}
+                    whileHover={{ scale: 1.02, x: 5 }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl">{item.emoji}</span>
+                      <span className="font-medium text-gray-700 group-hover:text-gray-900 transition-colors">
+                        {item.text}
+                      </span>
+                    </div>
+                    <motion.span
+                      className="text-gray-400 line-through text-sm"
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: [1, 0.5, 1] }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        delay: index * 0.2,
+                      }}
+                    >
+                      Variable
+                    </motion.span>
+                  </motion.div>
+                ))}
+
+                {/* Same Price Highlight */}
+                <motion.div
+                  className="flex items-center justify-center p-4 bg-dental-blue text-white rounded-xl font-bold text-lg relative overflow-hidden group cursor-pointer sm:col-span-2"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={
+                    heroInView
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.8 }
+                  }
+                  transition={{ duration: 0.6, delay: 2.0 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.div className="absolute inset-0 bg-gradient-to-r from-dental-blue-light to-dental-teal opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                  <div className="flex items-center space-x-3 z-10">
+                    <motion.span
+                      className="text-2xl"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 10, -10, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      ✅
+                    </motion.span>
+                    <motion.span
+                      animate={{ x: [0, 2, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      Same Price
+                    </motion.span>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div
+              className="pt-6 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={
+                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
+              transition={{ duration: 0.6, delay: 2.2 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-dental-blue hover:bg-dental-blue-dark text-white font-semibold px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden group"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-dental-blue-light to-dental-teal"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "0%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <span className="relative z-10">
+                    Get a Transparent Quote—Zero Surprises
+                  </span>
+                </Button>
+              </motion.div>
+
+              <motion.p
+                className="text-sm text-dental-gray mt-3"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 2.4 }}
+              >
+                No hidden fees. No surprise costs. Just honest pricing.
+              </motion.p>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              className="pt-8 border-t border-gray-100"
+              initial={{ opacity: 0, y: 20 }}
+              animate={
+                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
+              transition={{ duration: 0.6, delay: 2.6 }}
+            >
+              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-dental-gray">
+                {[
+                  "Licensed Specialists",
+                  "FDA Approved Materials",
+                  "Lifetime Warranty",
+                ].map((text, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-2"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 2.8 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <motion.span
+                      className="w-2 h-2 bg-green-500 rounded-full"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: index * 0.3,
+                      }}
+                    />
+                    <span className="hover:text-gray-900 transition-colors">
+                      {text}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image */}
           <motion.div
-            className="relative order-2 lg:order-1"
+            className="relative"
             initial={{ x: -100, opacity: 0 }}
             animate={
               heroInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
@@ -45,7 +328,7 @@ const Index = () => {
               <motion.img
                 src="https://images.pexels.com/photos/3946834/pexels-photo-3946834.jpeg"
                 alt="Professional dental clinic treatment showing modern dental care"
-                className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
@@ -66,7 +349,7 @@ const Index = () => {
                 >
                   <Badge
                     variant="secondary"
-                    className="bg-white/95 backdrop-blur-sm text-dental-blue border border-white/20 shadow-lg px-4 py-2 text-xs md:text-sm font-semibold hover:bg-white transition-all duration-300"
+                    className="bg-white/95 backdrop-blur-sm text-dental-blue border border-white/20 shadow-lg px-4 py-2 text-sm font-semibold hover:bg-white transition-all duration-300"
                   >
                     Patented Flat-Fee System.
                     <br className="hidden sm:block" />
@@ -109,7 +392,7 @@ const Index = () => {
 
           {/* Right Column - Content */}
           <motion.div
-            className="order-1 lg:order-2 space-y-8"
+            className="space-y-8"
             initial={{ x: 100, opacity: 0 }}
             animate={heroInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -124,7 +407,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <motion.h1
-                className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight"
+                className="text-5xl font-black text-gray-900 leading-tight"
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -150,7 +433,7 @@ const Index = () => {
 
             {/* Subheading */}
             <motion.p
-              className="text-lg md:text-xl text-dental-gray leading-relaxed font-light"
+              className="text-xl text-dental-gray leading-relaxed font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={
                 heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
