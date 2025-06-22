@@ -19,8 +19,133 @@ const Index = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="min-h-screen bg-white overflow-hidden"
+      className="min-h-screen bg-white overflow-hidden relative"
     >
+      {/* Floating Dental Icons Background */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Tooth Icons */}
+        <motion.div
+          className="absolute text-4xl opacity-10 text-dental-blue"
+          style={{ left: "10%", top: "20%" }}
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 10, 0],
+            rotate: [0, 5, 0],
+          }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          🦷
+        </motion.div>
+
+        <motion.div
+          className="absolute text-3xl opacity-8 text-dental-teal"
+          style={{ right: "15%", top: "30%" }}
+          animate={{
+            y: [0, -25, 0],
+            x: [0, -15, 0],
+            rotate: [0, -8, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        >
+          🦷
+        </motion.div>
+
+        <motion.div
+          className="absolute text-5xl opacity-6 text-dental-blue"
+          style={{ left: "80%", top: "60%" }}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        >
+          🦷
+        </motion.div>
+
+        <motion.div
+          className="absolute text-2xl opacity-12 text-dental-gray"
+          style={{ left: "5%", bottom: "30%" }}
+          animate={{
+            y: [0, -15, 0],
+            x: [0, 8, 0],
+            rotate: [0, -5, 0],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
+        >
+          🦷
+        </motion.div>
+
+        <motion.div
+          className="absolute text-3xl opacity-9 text-dental-teal"
+          style={{ right: "25%", bottom: "20%" }}
+          animate={{
+            y: [0, -22, 0],
+            x: [0, -12, 0],
+            rotate: [0, 7, 0],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4,
+          }}
+        >
+          🦷
+        </motion.div>
+
+        {/* Additional smaller floating teeth */}
+        <motion.div
+          className="absolute text-xl opacity-8 text-dental-blue"
+          style={{ left: "30%", top: "10%" }}
+          animate={{
+            y: [0, -18, 0],
+            x: [0, 12, 0],
+            rotate: [0, -6, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        >
+          🦷
+        </motion.div>
+
+        <motion.div
+          className="absolute text-xl opacity-7 text-dental-teal"
+          style={{ right: "40%", top: "80%" }}
+          animate={{
+            y: [0, -20, 0],
+            x: [0, -10, 0],
+            rotate: [0, 8, 0],
+          }}
+          transition={{
+            duration: 6.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2.5,
+          }}
+        >
+          🦷
+        </motion.div>
+      </div>
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
@@ -43,7 +168,7 @@ const Index = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.img
-                src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg"
+                src="https://images.pexels.com/photos/7788497/pexels-photo-7788497.jpeg"
                 alt="Professional dental implant restoration showing perfect smile"
                 className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 initial={{ scale: 1.1 }}
