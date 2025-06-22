@@ -17,7 +17,7 @@ const Index = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-white overflow-hidden">
+    <motion.div ref={containerRef} className="min-h-screen bg-white overflow-hidden">
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
@@ -386,7 +386,7 @@ const Index = () => {
                   delay: 0.8
                 },
                 {
-                  icon: "���",
+                  icon: "🏆",
                   title: "Premium Quality",
                   description: "Top-tier materials and expert craftsmanship at a fair, fixed price.",
                   delay: 1.0
@@ -450,7 +450,7 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
-    </div>
+    </motion.div>
   );
 };
 
